@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" layout:decorate="~{layout}">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <section class="layout-content" layout:fragment="corpo">
+        <div class="container my-5">
+            <h3> Add Produto</h3>
+            <div class="card">
+                <div class="card-body">
+                    <div class="col-md-10">
+                        <form action="#" th:action="@{/produtos/addquantidade/{id}(id=${produto.id})}"
+                            th:object="${produto}" method="post">
+                            <div class="row">
+                                <div class="form-group col-md-8">
+                                    <label for="nome" class="col-form-label">Nome</label>
+                                    <input type="text" th:field="*{nome}" class="form-control" id="nome"
+                                        placeholder="Nome">
+                                    <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"
+                                        class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group col-md-8">
+                                    <label for="descricao" class="col-form-label">Descrição</label>
+                                    <input type="text" th:field="*{descricao}" class="form-control" id="descricao"
+                                        placeholder="descricao">
+                                    <span th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}"
+                                        class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group col-md-8">
+                                    <label for="fornecedor" class="col-form-label">Preço</label>
+                                    <input th:field="*{preco}" class="form-control" id="preco" placeholder="Preço">
+
+                                    <span th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}"
+                                        class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group col-md-8">
+                                    <label for="fornecedor" class="col-form-label">Quantidade</label>
+                                    <select th:field="*{quantidade}" class="form-control" id="quantidade">
+                                        <option value="">Selecione a Quantidade</option>
+                                        <option th:each="p: ${#numbers.sequence(1, 10)}" th:value="${p}" th:text="${p}">
+                                        </option>
+                                    </select>
+                                    <span th:if="${#fields.hasErrors('quantidade')}" th:errors="*{quantidade}"
+                                        class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="hidden" id="id" th:field="*{id}" />
+                                    <input type="hidden" id="fornecedor.id" th:field="*{fornecedor.id}" />
+                                    <input type="submit" class="btn btn-primary" value="Add Produto">
+                                </div>
+
+                                <div class="form-group col-md-8"></div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

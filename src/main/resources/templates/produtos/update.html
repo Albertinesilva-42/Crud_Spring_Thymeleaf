@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" layout:decorate="~{layout}">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <section class="layout-content" layout:fragment="corpo">
+        <div class="container my-5">
+            <h3> Update Produto</h3>
+            <div class="card">
+                <div class="card-body">
+                    <div class="col-md-8">
+                        <form action="#" th:action="@{/produtos/update/{id}(id=${produto.id})}" th:object="${produto}"
+                            method="post">
+                            <div class="row">
+                                <div class="form-group col-md-8">
+                                    <label for="nome" class="col-form-label">Nome</label>
+                                    <input type="text" th:field="*{nome}" class="form-control" id="nome"
+                                        placeholder="Nome">
+                                    <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"
+                                        class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group col-md-8">
+                                    <label for="descricao" class="col-form-label">Descrição</label>
+                                    <input type="text" th:field="*{descricao}" class="form-control" id="descricao"
+                                        placeholder="descricao">
+                                    <span th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}"
+                                        class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group col-md-8">
+                                    <label for="descricao" class="col-form-label">Preço</label>
+                                    <input type="text" th:field="*{preco}" class="form-control" id="preco"
+                                        placeholder="preco">
+                                    <span th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}"
+                                        class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-md-8">
+                                    <label for="fornecedor" class="col-form-label">Fornecedor</label>
+                                    <select th:field="*{fornecedor}" class="form-control" id="fornecedor">
+                                        <option value="">Selecione o Fornecedor</option>
+                                        <option th:each="option : ${fornecedores}" th:value="${option.id}"
+                                            th:text="${option.nome}"></option>
+                                    </select>
+                                    <span th:if="${#fields.hasErrors('fornecedor')}" th:errors="*{fornecedor}"
+                                        class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group col-md-8">
+                                    <input type="hidden" id="id" th:field="*{id}" />
+                                    <input type="hidden" id="fornecedor.id" th:field="*{fornecedor}" />
+                                    <input type="submit" class="btn btn-primary" value="Update Produto">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

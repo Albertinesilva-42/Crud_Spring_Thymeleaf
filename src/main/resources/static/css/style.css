@@ -1,0 +1,128 @@
+/*
+ * Base structure
+ */
+ html, body {
+	height: 100%;
+}
+
+body {
+	padding-top: 56px;
+	padding-left: 0;
+} 
+
+/*
+ * main layout
+ */
+.layout-main {
+    display: flex;
+    min-height: calc(100vh - 52px);
+    overflow: hidden;
+}
+
+/*
+ * Content
+ */
+.layout-content {
+    width: 100%;
+    padding-top: 5px;
+}
+
+.container {
+	width: 100%;
+	padding-top: 10px;
+}
+
+IMG.displayed{ 
+    background: black;
+    border-radius: 2em;
+    padding: 2em;
+    transform: translate(5%);
+    width: 1000px;
+    height: 550px;
+    border: solid 15px;
+    font-size: 10px;
+}
+
+/*
+ * Sidebar
+ */
+.sidebar {
+    width: 0px;
+    height: 93vh;
+    border-top: 1px solid #eee;
+    border-right: 1px solid #eee;    
+    background-color: #060607;
+    flex-shrink: 0;
+    overflow: hidden;
+    transition: width .5s;
+}
+
+.sidebar .nav {
+	margin-bottom: 0px;
+}
+
+.sidebar .nav-item {
+	width: 100%;
+}
+
+.sidebar .nav-item {
+	margin-left: 0;
+}
+
+.sidebar .nav-link {
+	border-radius: 0;
+    color: #129de8;
+} 
+
+.sidebar ul li:hover a, .menu ul li.active a{
+    color: #f3d308;
+}
+
+.sidebar ul{
+    list-style: none;
+    padding: 10px 0px;
+}
+
+.sidebar ul li a{
+    display: block;
+    color:#f2fafb;
+    padding: 10px 15px;
+    white-space: nowrap;
+}
+
+.sidebar.sidebar-open {
+    width: 300px;
+}
+
+/*
+ * nav-pills home
+ */
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+	color: #fff;
+	background-color: #1e94d2;
+}
+
+/*
+ * toogle do navbar do menu
+ */ 
+
+.navbar-toggle {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+/*
+ * Footer
+ */
+.layout-footer {
+	position: relative;
+	height: 40px;
+    background-color: #b0bdcf;
+}
+
+.footer-copy {
+	font-size: 95%;
+	display: block;
+	color: #107ce8;
+	text-align: center;
+}

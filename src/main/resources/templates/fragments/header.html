@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+	<header th:fragment="cabecalho">
+		<nav class="navbar navbar-inverse navbar navbar-dark bg-dark fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="btn btn-dark navbar-toggle pull-left">
+						<i class="oi oi-menu"></i>
+					</button>
+					<a class="navbar-brand" th:href="@{#}">Crud Spring & Thymeleaf</a>
+					<li class="nav-item d-none d-sm-inline-block">
+						<a href="/" class="navbar-brand">Home</a>
+					</li>
+				</div>
+				<div class="nav-item dropdown">
+					<a class="btn btn-dark dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false">Produto</a>
+					<div class="dropdown-menu" aria-labelledby="dropdown01">
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" th:href="@{/produtos/buscar}">Consultar Produto</a>
+						<a class="dropdown-item" th:href="@{/produtos/cadastrar}">Cadastrar</a>
+						<a class="dropdown-item" th:href="@{/produtos/listar}">Listar</a>
+					</div>
+				</div>
+				<br>
+				<div class="nav-item dropdown">
+					<a class="btn btn-dark dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false">Fornecedor</a>
+					<div class="dropdown-menu" aria-labelledby="dropdown02">
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" th:href="@{/fornecedores/buscar}">Consultar Fornecedor</a>
+						<a class="dropdown-item" th:href="@{/fornecedores/cadastrar}">Cadastrar</a>
+						<a class="dropdown-item" th:href="@{/fornecedores/listar}">Listar</a>
+					</div>
+				</div>
+				<ul class="navbar-nav mr-auto"></ul>
+			</div>
+		</nav>
+	</header>
+</body>
+
+</html>

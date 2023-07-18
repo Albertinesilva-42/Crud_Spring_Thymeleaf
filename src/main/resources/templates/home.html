@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" layout:decorate="~{layout}">
+
+<head>
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+
+	<section class="layout-content" layout:fragment="corpo">
+		<main role="main">
+
+			<section class="jumbotron text-center">
+				<img class="d-block mx-auto mb-4" th:src="@{/image/favicon.png}" width="110" height="80">
+				<div class="container">
+					<h1 class="jumbotron-heading">Crud Spring & Thymeleaf</p>
+				</div>
+			</section>
+
+			<div class="album py-6 bg-light">
+
+				<div class="container">
+
+					<div class="row">
+						<div class="col-md-4">
+							<div class="card mb-4 box-shadow">
+								<img class="card-img-top" th:src="@{/image/spring boot.png}">
+								<div class="card-body">
+
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="card mb-4 box-shadow">
+								<a href="https://www.instagram.com/smttsaj/">
+									<img class="card-img-top" th:src="@{/image/thymeleaf.png}"></a>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="card mb-4 box-shadow">
+								<a href="https://saj.ba.gov.br/">
+									<img class="card-img-top" th:src="@{/image/html.jpg}"></a>
+							</div>
+						</div>
+
+						<div class="col-md-4">
+							<div class="card mb-0 box-shadow">
+								<a href="https://www.detran.ba.gov.br/servicos-detran.php">
+									<img class="card-img-top" th:src="@{/image/css.png}"></a>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="card mb-5 box-shadow">
+								<a href="https://www.youtube.com/watch?v=ne78NQDOQwk">
+									<img class="card-img-top" th:src="@{/image/bootstrap.png}"></a>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="card mb-4 box-shadow">
+								<a href="http://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm">
+									<img class="card-img-top" th:src="@{/image/javaScript.jpg}"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</section>
+</body>
+
+</html>
