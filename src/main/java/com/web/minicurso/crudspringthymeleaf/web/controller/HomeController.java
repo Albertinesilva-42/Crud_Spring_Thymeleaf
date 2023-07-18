@@ -1,4 +1,4 @@
-package com.web.minicurso.crudspringthymeleaf.controller;
+package com.web.minicurso.crudspringthymeleaf.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
