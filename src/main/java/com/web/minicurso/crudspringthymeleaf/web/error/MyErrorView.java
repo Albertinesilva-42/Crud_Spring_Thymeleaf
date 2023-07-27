@@ -7,11 +7,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
 
+import jakarta.servlet.http.HttpServletRequest;
+
 @Component
 public class MyErrorView implements ErrorViewResolver {
 
     @Override
-    public ModelAndView resolveErrorView(jakarta.servlet.http.HttpServletRequest request, HttpStatus status, Map<String, Object> map) {
+    public ModelAndView resolveErrorView(HttpServletRequest request, HttpStatus status, Map<String, Object> map) {
 
         // map.forEach((k,v) -> System.out.println(k + ":" + v + "\n"));
         ModelAndView model = new ModelAndView("/error");
