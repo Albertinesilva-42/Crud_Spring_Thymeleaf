@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
 
+//Contem todos os dados referentes ao request, caso precise manipular deve ser feito a manipulação do request 
 import jakarta.servlet.http.HttpServletRequest;
 
 @Component
